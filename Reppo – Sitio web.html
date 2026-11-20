@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reppo – Técnicos de reparación con reputación verificada</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F1F7FA;--card:#fff;--ink:#12283D;--mut:#546A7D;--line:#D8E3EB;--soft:#E1F3F1;--navy:#0F3D6B;--hero:#0F3D6B;--teal:#3DB5AC;--tx:#1F7F79;--okc:#17795C;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081826;--card:#112940;--ink:#E7F0F7;--mut:#9DB2C3;--line:#23415C;--soft:#133F42;--navy:#1A5A99;--hero:#0A2A4A;--tx:#5ED0C7;--okc:#4ADE9F}}
+:root[data-theme="dark"]{--bg:#081826;--card:#112940;--ink:#E7F0F7;--mut:#9DB2C3;--line:#23415C;--soft:#133F42;--navy:#1A5A99;--hero:#0A2A4A;--tx:#5ED0C7;--okc:#4ADE9F}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:20}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-1.2px;font-weight:800}h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.6px;line-height:1.15;font-weight:800}h3{font-size:18px;font-weight:700}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mut{color:var(--mut)}
+section{padding:72px 0}
+.sh{max-width:620px;margin-bottom:36px;display:flex;flex-direction:column;gap:10px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:19;background:var(--card);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:68px}
+.logo{font-size:28px;font-weight:800;letter-spacing:-1.5px;color:var(--navy);text-decoration:none}.logo i{font-style:normal;color:var(--teal)}
+:root[data-theme="dark"] .logo,.dk .logo{color:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo{color:#fff}}
+.links{display:flex;gap:22px;flex:1}.links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}.links a:hover{color:var(--tx)}
+.acts{display:flex;gap:10px;margin-left:auto}
+.btn{border:0;border-radius:12px;padding:12px 20px;font:inherit;font-weight:700;cursor:pointer;background:#1F7F79;color:#fff;text-decoration:none;display:inline-block;text-align:center}
+.btn.navy{background:var(--navy)}.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}.btn.sm{padding:9px 14px;font-size:14px}.btn.w{width:100%}
+.hero{background:var(--hero);color:#fff;padding:72px 0 80px}
+.hg{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero p.lead{color:#CFE0EE;font-size:18px;max-width:520px;margin:18px 0 26px}
+.search{background:var(--card);color:var(--ink);border-radius:18px;padding:14px;display:grid;grid-template-columns:200px 1fr auto;gap:10px;max-width:660px}
+.in{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit}
+textarea.in{resize:none}
+.pc{background:var(--card);color:var(--ink);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:14px;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.who{display:flex;gap:14px;align-items:center}
+.av{width:54px;height:54px;border-radius:50%;background:var(--soft);color:var(--ink);display:grid;place-items:center;font-weight:800;flex:none}
+.vf{background:var(--teal);color:#062B33;font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;margin-left:6px}
+.lv{background:var(--c);color:#1a1a1a;border-radius:999px;padding:2px 12px;font-size:13px;font-weight:700;white-space:nowrap}
+.br{display:grid;grid-template-columns:90px 1fr 36px;gap:10px;align-items:center;font-size:14px}.br i{height:8px;border-radius:9px;background:rgba(127,150,170,.3);overflow:hidden;display:block}.br u{display:block;height:100%;background:var(--teal)}
+.tag{background:var(--soft);border-radius:12px;padding:10px 14px;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 18px;font:inherit;font-weight:600;cursor:pointer}.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.ok{color:var(--okc);font-weight:600;font-size:14px}.sm{font-size:14px}
+.lvg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.lvg .card{border-top:6px solid var(--c)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}.ul li{padding-left:28px;position:relative}.ul li::before{content:"✓";position:absolute;left:0;color:var(--tx);font-weight:800}
+.pay{display:flex;justify-content:space-between;padding:6px 0}.pay.t{border-top:1px solid var(--line);margin-top:6px;padding-top:12px;font-weight:800;font-size:19px}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px}
+.price{font-size:34px;font-weight:800;letter-spacing:-1px}
+.cta{background:var(--hero);color:#fff;text-align:center;padding:64px 0}.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:18px}.cta p{color:#CFE0EE;max-width:520px}
+footer{padding:32px 0;color:var(--mut);font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+dialog{border:0;border-radius:22px;padding:28px;width:min(440px,calc(100% - 32px));background:var(--card);color:var(--ink);max-height:92vh}
+dialog::backdrop{background:rgba(5,20,35,.6)}
+dialog form{display:flex;flex-direction:column;gap:12px}
+.seg{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}.seg button{flex:1;border:0;background:none;color:var(--ink);padding:9px;border-radius:9px;font:inherit;font-weight:600;cursor:pointer}.seg .on{background:var(--teal);color:#062B33}
+.x{align-self:flex-end;border:0;background:none;color:var(--mut);font-size:26px;cursor:pointer;line-height:1;margin:-12px -10px -6px 0}
+.msg{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:14px}
+:focus-visible{outline:3px solid var(--tx);outline-offset:2px}.hero :focus-visible,.cta :focus-visible{outline-color:#fff}
+@media(max-width:900px){.hg,.two{grid-template-columns:1fr}.steps,.lvg{grid-template-columns:1fr 1fr}.search{grid-template-columns:1fr}.links{display:none}section{padding:52px 0}}
+@media(max-width:560px){.steps,.lvg,.plans{grid-template-columns:1fr}.acts .ghost{display:none}.wrap{padding:0 18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="#inicio">Repp<i>o</i></a>
+<nav class="links" aria-label="Principal"><a href="#como-funciona">Cómo funciona</a><a href="#tecnicos">Técnicos</a><a href="#niveles">Niveles</a><a href="#para-tecnicos">Para técnicos</a><a href="#planes">Planes</a></nav>
+<div class="acts"><button class="btn ghost" data-auth="login">Iniciar sesión</button><button class="btn" data-auth="registro">Crear cuenta</button></div>
+</div></header>
+
+<main id="inicio">
+<div class="hero dk"><div class="wrap hg">
+<div>
+<h1>Repara tus equipos con técnicos que sí tienen experiencia comprobada</h1>
+<p class="lead">En Reppo encuentras técnicos de celulares, portátiles, consolas y electrodomésticos, con su historial de reparaciones a la vista. Te atienden a domicilio o en taller.</p>
+<form class="search" id="sf">
+<select class="in" id="se" aria-label="Tipo de equipo"><option>Celular</option><option>Portátil</option><option>Consola</option><option>Electrodoméstico</option></select>
+<input class="in" placeholder="¿Qué falla tiene? Ej: no enciende" aria-label="Falla del equipo">
+<button class="btn navy">Buscar técnicos</button>
+</form>
+</div>
+<aside class="pc" aria-label="Ejemplo de perfil">
+<div class="who"><span class="av">CM</span><div><b>Carlos Mendoza</b><span class="vf">Verificado</span><div class="mut sm">Técnico en dispositivos electrónicos</div></div></div>
+<div class="who"><span class="lv" style="--c:#E0A92B">Nivel Oro</span><b>4,9 ★</b></div>
+<div><b class="sm">Reparaciones completadas</b>
+<div class="br"><span>Celulares</span><i><u style="width:100%"></u></i><b>256</b></div>
+<div class="br"><span>Portátiles</span><i><u style="width:72%"></u></i><b>184</b></div>
+<div class="br"><span>Consolas</span><i><u style="width:38%"></u></i><b>98</b></div></div>
+<div class="tag"><b>Disponible hoy</b> · 9:00 a. m. – 6:00 p. m.</div>
+</aside>
+</div></div>
+
+<section id="como-funciona"><div class="wrap">
+<div class="sh"><h2>Pedir una reparación toma pocos pasos</h2><p class="mut">Sin llamar a diez talleres para saber en quién confiar.</p></div>
+<ol class="steps">
+<li><h3>Cuéntanos la falla</h3><p class="mut">Elige el tipo de equipo y describe qué le pasa.</p></li>
+<li><h3>Compara técnicos</h3><p class="mut">Mira su nivel de confianza, calificación y disponibilidad.</p></li>
+<li><h3>Agenda el servicio</h3><p class="mut">A domicilio o en taller, con fecha y hora que te sirvan.</p></li>
+<li><h3>Califica al terminar</h3><p class="mut">Tu reseña ayuda a que otros usuarios elijan mejor.</p></li>
+</ol></div></section>
+
+<section id="tecnicos" style="padding-top:0"><div class="wrap">
+<div class="sh"><h2>Técnicos disponibles</h2><p class="mut">Filtra por el tipo de equipo que necesitas reparar.</p></div>
+<div class="chips" id="chips"></div>
+<div class="grid" id="tl"></div>
+</div></section>
+
+<section id="niveles" style="background:var(--card);border-block:1px solid var(--line)"><div class="wrap">
+<div class="sh"><h2>Niveles de confianza</h2><p class="mut">Cada técnico sube de nivel según la cantidad y la calidad de reparaciones que completa en cada especialidad. Una persona puede ser Oro en celulares y Plata en portátiles.</p></div>
+<div class="lvg">
+<div class="card" style="--c:#C98B55"><h3>Bronce</h3><p class="mut sm">Técnicos que están empezando a construir su historial en la plataforma.</p></div>
+<div class="card" style="--c:#A9B6C2"><h3>Plata</h3><p class="mut sm">Ya tienen reparaciones completadas y reseñas de usuarios reales.</p></div>
+<div class="card" style="--c:#E0A92B"><h3>Oro</h3><p class="mut sm">Experiencia comprobada y buenas calificaciones de forma constante.</p></div>
+<div class="card" style="--c:#6FA8DC"><h3>Platino</h3><p class="mut sm">El nivel más alto de confianza que ofrece Reppo.</p></div>
+</div></div></section>
+
+<section id="para-tecnicos"><div class="wrap two">
+<div>
+<h2>¿Eres técnico o tienes un taller?</h2>
+<p class="mut" style="margin-top:12px">Crea tu perfil verificado y deja que tu trabajo hable por ti: cada reparación cuenta para tu reputación.</p>
+<ul class="ul">
+<li>Perfil con tu historial de reparaciones por especialidad.</li>
+<li>Verificación con documento de identidad, certificado (opcional) y antecedentes.</li>
+<li>Recibe solicitudes cerca de ti, a domicilio o para tu taller.</li>
+<li>Panel de ingresos para ver tus pagos y tu saldo disponible.</li>
+</ul>
+<button class="btn" style="margin-top:24px" data-auth="registro" data-role="t">Registrarme como técnico</button>
+</div>
+<div class="card"><h3>Así se ve un pago</h3><p class="mut sm">Cambio de pantalla de celular, a domicilio</p>
+<div class="pay"><span>Pago estimado</span><b>$ 120.000</b></div>
+<div class="pay"><span>Comisión Reppo</span><b>− $ 12.000</b></div>
+<div class="pay t"><span>Tú recibes</span><span class="ok" style="font-size:19px">$ 108.000</span></div></div>
+</div></section>
+
+<section id="planes" style="background:var(--card);border-top:1px solid var(--line)"><div class="wrap">
+<div class="sh"><h2>Destaca tu perfil</h2><p class="mut">Aparece primero en las búsquedas de tu zona y consigue más clientes.</p></div>
+<div class="plans">
+<div class="card"><h3>Mensual</h3><div class="price">$ 29.900</div><p class="mut sm">Cancela cuando quieras</p><ul class="ul sm"><li>Posición destacada en resultados</li><li>Insignia de perfil destacado</li><li>Estadísticas de visitas a tu perfil</li></ul><button class="btn ghost w" data-auth="registro" data-role="t">Elegir mensual</button></div>
+<div class="card" style="border:2px solid var(--teal)"><h3>Anual</h3><div class="price">$ 299.000</div><p class="mut sm">Ahorras 2 meses</p><ul class="ul sm"><li>Posición destacada en resultados</li><li>Insignia de perfil destacado</li><li>Estadísticas de visitas a tu perfil</li></ul><button class="btn w" data-auth="registro" data-role="t">Elegir anual</button></div>
+</div></div></section>
+
+<div class="cta dk"><div class="wrap"><h2>Repara con tranquilidad</h2><p>Crea tu cuenta gratis y encuentra un técnico verificado cerca de ti.</p><button class="btn navy" style="background:#fff;color:#0F3D6B" data-auth="registro">Crear cuenta</button></div></div>
+</main>
+
+<footer><div class="wrap"><span><b class="logo" style="font-size:20px">Repp<i>o</i></b> · Proyecto académico, Corporación Universidad de la Costa (CUC)</span><span>Batista · Martínez · Cervantes · Cabrera</span></div></footer>
+
+<dialog id="d" aria-label="Reppo"></dialog>
+
+<script>
+const T=[
+{n:'Carlos Ramírez',i:'CR',e:['Celular'],d:'Reparación de celulares',l:'Oro',r:128,a:'Disponible hoy',s:'4,9'},
+{n:'Andrea López',i:'AL',e:['Portátil'],d:'Reparación de portátiles',l:'Plata',r:96,a:'Disponible mañana',s:'4,7'},
+{n:'Miguel Torres',i:'MT',e:['Consola','Electrodoméstico'],d:'Reparación avanzada',l:'Platino',r:212,a:'Disponible hoy',s:'4,9'},
+{n:'Laura Ríos',i:'LR',e:['Portátil','Celular'],d:'Portátiles y celulares',l:'Plata',r:63,a:'Disponible mañana',s:'4,7'}];
+const LV={Bronce:'#C98B55',Plata:'#A9B6C2',Oro:'#E0A92B',Platino:'#6FA8DC'};
+const F=['Todos','Celular','Portátil','Consola','Electrodoméstico'];
+let filt='Todos';
+const $=s=>document.querySelector(s), d=$('#d');
+function list(){
+  $('#chips').innerHTML=F.map(f=>`<button class="chip ${f==filt?'on':''}" data-f="${f}">${f=='Todos'?f:f+'s'}</button>`).join('');
+  const r=T.filter(t=>filt=='Todos'||t.e.includes(filt));
+  $('#tl').innerHTML=r.map((t,k)=>`<article class="card"><div class="who"><span class="av">${t.i}</span><div><b>${t.n}</b><div class="mut sm">${t.d}</div></div></div>
+  <div class="who"><span class="lv" style="--c:${LV[t.l]}">${t.l}</span><span class="sm">★ ${t.s} · ${t.r} reparaciones</span></div>
+  <span class="ok">${t.a}</span><button class="btn navy sm" data-req="${T.indexOf(t)}">Solicitar servicio</button></article>`).join('')||'<p class="mut">Aún no hay técnicos para este tipo de equipo.</p>';
+}
+function open(h){d.innerHTML=`<form method="dialog" style="gap:0"><button class="x" aria-label="Cerrar">×</button></form>`+h;d.showModal();}
+let mode='login',role='u';
+function auth(){
+  const reg=mode=='registro',tec=role=='t';
+  open(`<form id="af"><h2 style="font-size:26px">${reg?'Crea tu cuenta':'Bienvenido de nuevo'}</h2>
+  <p class="mut sm">${reg?(tec?'Verificamos tu perfil para dar confianza a los usuarios.':'Encuentra técnicos con experiencia comprobada.'):'Ingresa para seguir tus solicitudes.'}</p>
+  <div class="seg"><button type="button" class="${tec?'':'on'}" data-role="u">Usuario</button><button type="button" class="${tec?'on':''}" data-role="t">Técnico</button></div>
+  ${reg?`<input class="in" placeholder="${tec?'Nombre completo o del taller':'Nombre completo'}" aria-label="Nombre" required>`:''}
+  <input class="in" type="email" placeholder="Correo electrónico" aria-label="Correo" required>
+  ${reg?'<input class="in" type="tel" placeholder="Teléfono" aria-label="Teléfono">':''}
+  <input class="in" type="password" placeholder="Contraseña" aria-label="Contraseña" required>
+  ${reg&&tec?'<p class="msg">Después del registro te pediremos documento de identidad, antecedentes y, si tienes, un certificado.</p>':''}
+  ${reg?'<label class="sm"><input type="checkbox" required> Acepto los términos y condiciones</label>':''}
+  <button class="btn w">${reg?(tec?'Enviar para verificación':'Crear cuenta'):'Iniciar sesión'}</button>
+  <p class="sm mut" style="text-align:center">${reg?'¿Ya tienes cuenta?':'¿No tienes cuenta?'} <a href="#inicio" data-m="${reg?'login':'registro'}" style="color:var(--tx);font-weight:700">${reg?'Inicia sesión':'Regístrate'}</a></p></form>`);
+}
+function req(k){const t=T[k];
+  open(`<form id="rf"><h2 style="font-size:24px">Solicitar servicio</h2><p class="mut sm">Con ${t.n} · ${t.d}</p>
+  <div class="seg"><button type="button" class="on" data-mod>A domicilio</button><button type="button" data-mod>En taller</button></div>
+  <input class="in" type="datetime-local" value="2026-11-25T15:00" aria-label="Fecha y hora">
+  <input class="in" placeholder="Dirección de servicio" aria-label="Dirección">
+  <textarea class="in" rows="3" placeholder="Resumen de la falla" aria-label="Falla"></textarea>
+  <button class="btn w">Confirmar solicitud</button></form>`);
+}
+document.addEventListener('click',e=>{
+  const t=e.target;
+  if(t.dataset.f){filt=t.dataset.f;list();return;}
+  if(t.dataset.req!==undefined){req(+t.dataset.req);return;}
+  if(t.dataset.auth){mode=t.dataset.auth;role=t.dataset.role||'u';auth();return;}
+  if(t.dataset.m){e.preventDefault();mode=t.dataset.m;auth();return;}
+  if(t.dataset.role&&d.open){role=t.dataset.role;auth();return;}
+  if(t.dataset.mod!==undefined){[...t.parentNode.children].forEach(c=>c.classList.toggle('on',c==t));return;}
+  if(t==d)d.close();
+});
+document.addEventListener('submit',e=>{
+  if(e.target.id=='sf'){e.preventDefault();filt=$('#se').value;list();location.hash='tecnicos';document.getElementById('tecnicos').scrollIntoView();return;}
+  if(e.target.id=='af'){e.preventDefault();e.target.insertAdjacentHTML('beforeend','<p class="msg">Esto es una demostración: aquí se conectaría con el sistema de cuentas.</p>');}
+  if(e.target.id=='rf'){e.preventDefault();e.target.innerHTML='<h2 style="font-size:24px">Solicitud enviada</h2><p class="mut">Te avisaremos cuando el técnico la acepte. Podrás seguir el estado del servicio desde tu cuenta.</p><button class="btn w" onclick="d.close()" type="button">Entendido</button>';}
+});
+list();
+</script>
+</body>
+</html>
